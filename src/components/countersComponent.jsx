@@ -8,26 +8,28 @@ import Products from './productComponent';
 class Counters extends Component {
     state = { 
         counters: [
-            { id: 1, value: 0},
-            { id: 2, value: 0},
-            { id: 3, value: 0},
-            { id: 4, value: 0},
+            { id: 1, value: 0, category: "Milk"},
+            { id: 2, value: 0, category: "Bread"},
+            { id: 3, value: 0, category: "Vegetable"},
+            { id: 4, value: 0, category: "Fruits"},
         ]
      }
+
+    // Routing
     render() { 
         return ( 
             <div>
                 <Switch>
-                <Route path="/contactus" component = {ContactForm} />
-                <Route path="/products" component = {Products} />
-                <Route path="/" >
-                <Navbar />
-                <div style = {{ marginTop: 20}}>
-                { this.state.counters.map(counter => 
-                    <Counter key={counter.id} value={counter.value} id={counter.id}/>)
-                }
-                </div>
-                </Route>
+                    <Route path="/contactus" component = {ContactForm} />
+                    <Route path="/products" component = {Products} />
+                    <Route path="/" >
+                    <Navbar />
+                    <div style = {{ marginTop: 20}}>
+                        { this.state.counters.map(counter => 
+                        <Counter key={counter.id} value={counter.value} id={counter.id} category={counter.category}/>)
+                        }
+                    </div>
+                    </Route>
                 </Switch>
             </div>
          );

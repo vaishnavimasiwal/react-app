@@ -12,6 +12,7 @@ class Products extends Component {
         ]
     }
 
+    //Conditional rendering
     renderList() {
         if(this.state.list.length === 0) return <p>Nothing to show</p>;
 

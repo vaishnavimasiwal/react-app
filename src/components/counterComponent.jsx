@@ -32,7 +32,7 @@ class Counter extends Component {
         let classes = this.getBadgeClasses();
         return (
             <div>
-                <h4>Product: { this.props.id }</h4>
+                <h4>Product: { this.props.category }</h4>
                 <button onClick = {this.handleIncrement} className="btn btn-secondary btn-sm"> + </button> 
                 <span className = {this.getBadgeClasses()}> { this.formatCount() } </span>
                 <button onClick = {this.handleDecrement} className="btn btn-secondary btn-sm"> - &nbsp; </button>
@@ -48,7 +48,7 @@ class Counter extends Component {
 
     formatCount() {
         const { count } = this.state;
-        return count === 0 ? 'Zero' : count;
+        return count === 0 ? 'Add to cart' : count;
     }
 }
  
