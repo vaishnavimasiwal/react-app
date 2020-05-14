@@ -4,6 +4,7 @@ import Navbar from './navbarComponent';
 import { Route, Switch } from 'react-router-dom';
 import ContactForm from './formComponent';
 import Products from './productComponent';
+import PersonList from './personListComponent';
 
 class Counters extends Component {
     state = { 
@@ -22,6 +23,7 @@ class Counters extends Component {
                 <Switch>
                     <Route path="/contactus" component = {ContactForm} />
                     <Route path="/products" component = {Products} />
+                    <Route path="/personList" component = {PersonList} />
                     <Route path="/" >
                     <Navbar />
                     <div style = {{ marginTop: 20}}>
